@@ -6,13 +6,14 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "tsx src/server.ts"
+    "dev": "tsx watch src/server.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^20.7.2",
-    "tsx": "^3.13.0"
+    "tsx": "^3.13.0",
+    "zod": "^3.22.3"
   }
 }
