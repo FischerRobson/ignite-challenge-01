@@ -6,7 +6,6 @@ import { extractRouteParams } from './utils/extract-route-params'
 
 const port = 3333
 
-
 const server = http.createServer(async (req: http.IncomingMessage, res: http.ServerResponse) => {
   const { url, method } = req
 

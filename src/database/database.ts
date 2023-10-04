@@ -6,9 +6,8 @@ const databasePath = new URL('../db.json', import.meta.url)
 type Tables = 'TASKS'
 
 interface SelectParams {
-  id?: string;
-  title?: string;
-  description?: string;
+  title?: string | null;
+  description?: string | null;
 }
 
 class Database {
@@ -30,13 +29,19 @@ class Database {
     fs.writeFile(databasePath, JSON.stringify(this.#tables))
   }
 
-  select(table: Tables, params?: SelectParams) {
-    const data = this.#tables[table] ?? []
+  select(table: Tables, params: SelectParams | null = null) {
+    let t: Task[] = this.#tables[table] ?? []
 
     if (params) {
-
+      const { title, description } = params
     }
 
+    return t
+  }
+
+  selectById(table: Tables, id: string) {
+    const t: Task[] = this.#tables[table] ?? []
+    const data = t.find(row => row.id === id)
     return data
   }
 
