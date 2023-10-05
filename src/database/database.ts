@@ -6,8 +6,7 @@ const databasePath = new URL('../db.json', import.meta.url)
 type Tables = 'TASKS'
 
 interface SelectParams {
-  title?: string | null;
-  description?: string | null;
+  [key: string]: string | undefined;
 }
 
 class Database {
@@ -31,9 +30,15 @@ class Database {
 
   select(table: Tables, params: SelectParams | null = null) {
     let t: Task[] = this.#tables[table] ?? []
+    console.log(params)
 
     if (params) {
-      const { title, description } = params
+      t = t.filter(t => {
+        return Object.entries(params)
+          .some(([key, value]) => {
+            return t[key].includes(value)
+          })
+      })
     }
 
     return t

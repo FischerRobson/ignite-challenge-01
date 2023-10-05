@@ -39,10 +39,13 @@ export const routes: Route[] = [
     path: buildRoutePath('/tasks'),
     handler: async (req, res, body, requestOptions) => {
       const { query } = requestOptions;
-      const data = database.select('TASKS', {
-        title: query.title || null,
-        description: query.description || null
-      })
+
+      const searchParams = {
+        title: query.title,
+        description: query.description
+      }
+
+      const data = database.select('TASKS', query ? searchParams : null)
       res.end(JSON.stringify(data));
     }
   },
