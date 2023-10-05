@@ -30,13 +30,12 @@ class Database {
 
   select(table: Tables, params: SelectParams | null = null) {
     let t: Task[] = this.#tables[table] ?? []
-    console.log(params)
 
-    if (params) {
+    if (params && Object.entries(params).length > 0) {
       t = t.filter(t => {
         return Object.entries(params)
           .some(([key, value]) => {
-            return t[key].includes(value)
+            return t[key].toLocaleLowerCase().includes(value?.toLocaleLowerCase()) // t[key] == t.key
           })
       })
     }

@@ -6,8 +6,7 @@ import { database } from './database/database';
 import { Task } from './database/entities/task';
 
 interface Query {
-  title?: string;
-  description?: string;
+  [key: string]: string | undefined;
 }
 
 interface Params {
@@ -38,15 +37,10 @@ export const routes: Route[] = [
     method: 'GET',
     path: buildRoutePath('/tasks'),
     handler: async (req, res, body, requestOptions) => {
-      const { query } = requestOptions;
+      const { query } = requestOptions
 
-      const searchParams = {
-        title: query.title,
-        description: query.description
-      }
-
-      const data = database.select('TASKS', query ? searchParams : null)
-      res.end(JSON.stringify(data));
+      const data = database.select('TASKS', query)
+      res.end(JSON.stringify(data))
     }
   },
   {
