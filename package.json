@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "tsx watch src/server.ts"
+    "dev": "tsx watch src/server.ts",
+    "import": "tsx src/streams/csv-import-stream.ts"
   },
   "keywords": [],
   "author": "",
@@ -15,5 +16,8 @@
     "@types/node": "^20.7.2",
     "tsx": "^3.13.0",
     "zod": "^3.22.3"
+  },
+  "dependencies": {
+    "csv": "^6.3.4"
   }
 }

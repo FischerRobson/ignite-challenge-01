@@ -1,7 +1,7 @@
 import http from 'node:http'
+import { parse } from 'csv'
 import { jsonMiddleware } from './middlewares/json'
 import { routes } from './routes'
-import { buildRoutePath } from './utils/build-route-path'
 import { extractRouteParams } from './utils/extract-route-params'
 
 const port = 3333

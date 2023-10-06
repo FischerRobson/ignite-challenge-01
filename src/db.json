@@ -1,1 +1,12 @@
-{"TASKS":[{"id":"8b32c953-b34d-45bd-9338-0a0a3a9699f8","title":"New Task Title","description":"lorem ipsum","completed_at":null,"created_at":"2023-10-03T22:05:11.628Z","updated_at":"2023-10-04T23:59:15.113Z"},{"id":"e2fd6949-3e6c-4d7b-81da-64b285916a5e","title":"Some task","description":"This is a simple task","completed_at":null,"created_at":"2023-10-04T23:10:26.720Z","updated_at":"2023-10-04T23:10:26.720Z"},{"id":"661a72ce-962f-457e-bbbf-56fbdf7d60ef","title":"Some task","description":"This is a simple task","completed_at":null,"created_at":"2023-10-04T23:38:56.550Z","updated_at":"2023-10-04T23:38:56.550Z"},{"id":"5bd8ecb6-3539-4c1e-9828-7e34e43b9b37","title":"Some task","description":"This is a simple task","completed_at":null,"created_at":"2023-10-04T23:39:47.715Z","updated_at":"2023-10-04T23:39:47.715Z"}]}
+{
+  "TASKS": [
+    {
+      "id": "8b32c953-b34d-45bd-9338-0a0a3a9699f8",
+      "title": "New Task Title",
+      "description": "lorem ipsum",
+      "completed_at": null,
+      "created_at": "2023-10-03T22:05:11.628Z",
+      "updated_at": "2023-10-04T23:59:15.113Z"
+    }
+  ]
+}
